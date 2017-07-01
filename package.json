@@ -1,0 +1,32 @@
+{
+  "name": "bibleapi-graphql",
+  "version": "0.0.1",
+  "description": "Bible API GraphQL",
+  "author": "Ruslan Kazakov",
+  "license": "MIT",
+  "scripts": {
+    "start": "node lib/index",
+    "dev": "nodemon --exec node lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkazakov/bibleapi-graphql.git"
+  },
+  "keywords": [
+    "bible",
+    "api",
+    "graphql"
+  ],
+  "bugs": {
+    "url": "https://github.com/rkazakov/bibleapi-graphql/issues"
+  },
+  "homepage": "https://github.com/rkazakov/bibleapi-graphql#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-graphql": "^0.5.3",
+    "graphql": "^0.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  }
+}
