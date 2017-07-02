@@ -1,0 +1,16 @@
+query JohnQuery {
+  passage(reference: "John 1:1-5") {
+    verses {
+      bookId,
+      bookRef,
+      bookName,
+      chapterId,
+      verseId,
+      verseText
+    },
+    translation {
+      id,
+      name
+    }
+  }
+}
