@@ -24,7 +24,8 @@
   "dependencies": {
     "express": "^4.14.0",
     "express-graphql": "^0.5.3",
-    "graphql": "^0.6.0"
+    "graphql": "^0.6.0",
+    "mongodb": "^2.2.29"
   },
   "devDependencies": {
     "nodemon": "^1.9.2"

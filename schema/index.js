@@ -16,10 +16,10 @@ const RootQueryType = new GraphQLObjectType({
         reference: {type: new GraphQLNonNull(GraphQLString)}
       },
       resolve: (obj, args, ctx) => {
-        // get verse data
+        // Parse passage reference
         return args.reference === 'Gen 1:1'
-          ? { verse: 'In the beginning God created the heaven and the earth.' }
-          : { verse: 'Not found' };
+          ? { book: 1, chapter: 1, verse: 1 }
+          : { book: 2, chapter: 1, verse: 1 };
       }
     }
   }
