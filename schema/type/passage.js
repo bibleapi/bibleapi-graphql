@@ -1,6 +1,5 @@
-const {GraphQLObjectType, GraphQLString} = require('graphql');
-
-const mongoDb = require('../../db/mongo');
+import {GraphQLObjectType, GraphQLString} from 'graphql';
+import mongoDb from '../../db/mongo';
 
 module.exports = new GraphQLObjectType({
   name: 'Passage',

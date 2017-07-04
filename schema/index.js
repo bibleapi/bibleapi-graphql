@@ -1,14 +1,9 @@
-const {GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLNonNull} = require('graphql');
-const Passage = require('./type/passage');
+import {GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLNonNull} from 'graphql';
+import Passage from './type/passage';
 
 const RootQueryType = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
-    text: {
-      type: GraphQLString,
-      description: 'The sample text in GraphQL',
-      resolve: () => 'Hi GraphQL!'
-    },
     passage: {
       type: Passage,
       description: 'Get Bible passage',
