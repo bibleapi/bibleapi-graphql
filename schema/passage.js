@@ -1,5 +1,5 @@
 import {GraphQLObjectType, GraphQLString} from 'graphql';
-import mongoDb from '../../db/mongo';
+import mongoDb from '../db/mongo';
 
 module.exports = new GraphQLObjectType({
   name: 'Passage',
