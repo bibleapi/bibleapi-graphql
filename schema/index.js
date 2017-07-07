@@ -11,12 +11,7 @@ const RootQueryType = new GraphQLObjectType({
         reference: {type: new GraphQLNonNull(GraphQLString)}
       },
       resolve: (obj, args, { parser }) => {
-        const result = parser.parseRef(args.reference);
-        // Parse passage reference
-        // return args.reference === 'Gen 1:1'
-        //   ? { book: 1, chapter: 1, verse: 1 }
-        //   : { book: 2, chapter: 1, verse: 1 };
-        return result;
+        return parser.parse(args.reference);
       }
     }
   }
