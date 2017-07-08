@@ -1,22 +1,25 @@
 module.exports = mongoPool => {
   return {
-    getVerse(ref) {
-      return mongoPool.collection('bible')
-        .findOne({bookRef: ref.b, chapter: ref.c, verse: ref.v})
-        .then(verse => verse['text']);
-    },
-    select(query) {
-      return mongoPool.collection('bible')
-        .findOne(query)
-        .then(verse => verse['text']);
-    },
-    executeQuery(query) {
+    getVerses(query) {
       return mongoPool.collection('bible')
         .find(query)
-        .toArray((err, result) => {
-          // console.log(result[0]['text']);
-          return result[0]['text'];
-        });
-    }
+        .toArray()
+        .then(rows =>
+          rows.map((row) => ({
+            id: row._id,
+            book: row.bookRef,
+            chapter: row.chapter,
+            verse: row.verse,
+            text: row.text
+          })));
+    },
+    getText(query) {
+      return mongoPool.collection('bible')
+        .find(query)
+        .toArray()
+        .then(rows =>
+          rows.reduce((text, row) =>
+            text.concat(row.text, ' '), ''));
+    },
   }
 };
