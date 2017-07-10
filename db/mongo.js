@@ -1,7 +1,7 @@
 module.exports = mongoPool => {
   return {
     getVerses(query) {
-      return mongoPool.collection('bible')
+      return mongoPool.collection(process.env.MONGODB_COLLECTION)
         .find(query)
         .toArray()
         .then(rows =>
@@ -14,12 +14,12 @@ module.exports = mongoPool => {
           })));
     },
     getText(query) {
-      return mongoPool.collection('bible')
+      return mongoPool.collection(process.env.MONGODB_COLLECTION)
         .find(query)
         .toArray()
         .then(rows =>
           rows.reduce((text, row) =>
-            text.concat(row.text, ' '), ''));
+            text.concat(row.text, ' '), '')); // @todo remove last space in 'text' field
     },
   }
 };
