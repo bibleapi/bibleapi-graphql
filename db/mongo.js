@@ -17,9 +17,7 @@ module.exports = mongoPool => {
       return mongoPool.collection(process.env.MONGODB_COLLECTION)
         .find(query)
         .toArray()
-        .then(rows =>
-          rows.reduce((text, row) =>
-            text.concat(row.text, ' '), '')); // @todo remove last space in 'text' field
+        .then(rows => rows.map(row => row.text).join(' '));
     },
   }
 };
