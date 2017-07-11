@@ -16,7 +16,7 @@ services:
 
     # Expose ports [HOST:CONTAINER}
     ports:
-      - "80:3333"
+      - "3333:3333"
 
     # Set environment variables from this file
     env_file:
