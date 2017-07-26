@@ -1,6 +1,6 @@
 {
   "name": "bibleapi-graphql",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bible API GraphQL",
   "author": "Ruslan Kazakov",
   "license": "MIT",
@@ -30,7 +30,7 @@
     "express-graphql": "^0.5.3",
     "graphql": "^0.6.0",
     "lodash": "^4.17.4",
-    "mongodb": "^2.2.29"
+    "mongodb": "^2.2.30"
   },
   "devDependencies": {
     "nodemon": "^1.9.2"

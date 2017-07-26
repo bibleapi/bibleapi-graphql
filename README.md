@@ -20,7 +20,7 @@ npm run dev
 
 ### Use
 
-Request [http://localhost:3000/graphql](http://localhost:3000/graphql)
+Request [http://localhost:3333/graphql](http://localhost:3333/graphql)
 
 ```
 {
@@ -40,4 +40,17 @@ Response
     }
   }
 }
+```
+
+### Database
+
+Start MongoDB
+```
+mongod --dbpath ./data/db
+```
+
+Import data
+
+```
+mongoimport --db bibleapi --collection bible --type json --file /seed/asv.json
 ```

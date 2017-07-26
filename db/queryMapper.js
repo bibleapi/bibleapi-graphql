@@ -1,14 +1,21 @@
 import _ from 'lodash';
 import { bcv_parser as bcvParser } from 'bible-passage-reference-parser/js/en_bcv_parser';
+
 const bcv = new bcvParser;
 
 const mapQuery = (passages) => {
+
   const translationInfo = bcv.translation_info('');
+
   const queries = _.map(passages, (passage) => {
-    if(passage.type === 'bc') {
+
+    if(passage.type === 'bc') { // Gen 1
       return { bookRef: passage.start.b, chapter: passage.start.c }
     }
-    else if(passage.type === 'bcv') {
+    else if(passage.type === 'bcv') { // Gen 1:4
+      return { bookRef: passage.start.b, chapter: passage.start.c, verse: passage.start.v }
+    }
+    else if(passage.type === 'cv') { // Gen 1:4,6:9
       return { bookRef: passage.start.b, chapter: passage.start.c, verse: passage.start.v }
     }
     else if(passage.type === 'range') {
@@ -44,9 +51,11 @@ const mapQuery = (passages) => {
       }
 
     }
+
   });
 
   return { $and: queries };
+
 };
 
 export default { mapQuery }
