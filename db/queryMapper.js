@@ -1,10 +1,8 @@
 import _ from 'lodash';
-import { bcv_parser as bcvParser } from 'bible-passage-reference-parser/js/en_bcv_parser';
-
-const bcv = new bcvParser;
+import { bcv_parser as BcvParcer } from 'bible-passage-reference-parser/js/en_bcv_parser';
 
 const mapQuery = (passages) => {
-
+  const bcv = new BcvParcer;
   const translationInfo = bcv.translation_info('');
 
   const queries = _.map(passages, (passage) => {
@@ -55,7 +53,6 @@ const mapQuery = (passages) => {
   });
 
   return { $and: queries };
-
 };
 
 export default { mapQuery }
