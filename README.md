@@ -1,5 +1,7 @@
 # Bible API GraphQL - WIP
 
+[![Known Vulnerabilities](https://snyk.io/test/github/bibleapi/bibleapi-graphql/badge.svg)](https://snyk.io/test/github/bibleapi/bibleapi-graphql)
+
 ### Install
 
 ```
