@@ -28,7 +28,7 @@
     "express": "^4.14.0",
     "express-graphql": "^0.5.3",
     "graphql": "^0.6.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.17",
     "mongodb": "^2.2.30"
   },
   "devDependencies": {
