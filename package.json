@@ -25,7 +25,7 @@
     "bible-passage-reference-parser": "^2.0.1",
     "cors": "^2.8.4",
     "dotenv": "^4.0.0",
-    "express": "^4.14.0",
+    "express": "^4.17.3",
     "express-graphql": "^0.5.3",
     "graphql": "^0.6.0",
     "lodash": "^4.17.4",
